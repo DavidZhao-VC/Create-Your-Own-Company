@@ -4,10 +4,12 @@ A skill for persistent chat coordination. The user communicates only with the ma
 
 ## Core rules
 
-- Dispatch only when a task has at least three substantive requirements and a worthwhile division of work. Handle ordinary small tasks in the main chat.
+- The main chat derives work units from the requested outcome and records each owner, deliverable, acceptance criteria, dependencies, writable scope and next action. Users need not enumerate requirements or request assignment.
+- Dispatch employees only when a task has at least three substantive requirements and a worthwhile division of work. The main chat still organizes and completes smaller tasks.
 - Activate research, design, engineering, visual/media and review responsibilities as needed. Reuse the minimum staff.
 - Escalate major decisions, formal design reviews and any formal FAIL to the user. Freeze only affected scope.
-- Form reports immediately for major issues and completed work. Batch three small issues within the same task; coordinate real blockers earlier.
+- Form internal reports immediately for major issues and completed units. The main chat verifies them, updates dependencies and continues authorized work. Batch three small issues within the same task; coordinate real blockers earlier.
+- Keep routine progress in records. Required visible progress updates remain brief and non-final. Deliver the final result after overall acceptance, or seek user input for an actual decision, authorization or blocker. Record unavoidable host handoffs accurately.
 - Employees save artifacts and the main chat collects them. Instance settings govern communication, budgets, models, deadlines and recovery.
 - Present user choices in the main chat's message body. Available question cards and native notifications support that exchange.
 
