@@ -1,26 +1,27 @@
-# 人员、状态与运行能力
+# Staffing, state and runtime capabilities
 
-启用必要职责，负责人兼执行，主对话统一协调。同类执行和普通资料阅读默认一人；审核另选不同作者且有相应专长的员工。
+Activate only necessary responsibilities. A lead may also execute; the main chat coordinates everyone. Ordinary reading and similar execution default to one employee. Independent review uses a different author with relevant expertise.
 
-同类大体量出现立即评估增员。比较单人基线与多人方案的规模、差异、耗时、共享瓶颈，以及交接、重复劳动、通信、合并、验证成本。用已有信息作有依据的粗估，记收益、限制与人数决定；无依据保持单人，不另开员工估算成本。优先复用，仍不足才在真人授权的人数、并发和预算内及时创建。员工不得递归创建。
+Assess staffing immediately when substantial similar work appears. Compare one employee with multiple employees for scale, differences, duration, shared bottlenecks, and handoff, duplicate work, communication, merging and verification costs. Make a grounded estimate from available information and record benefits, limits and staffing decisions. Without evidence, retain one employee; do not create an employee merely to estimate staffing costs. Reuse first; create the minimum additional staff only within human-authorized headcount, concurrency and budgets. Employees cannot recursively create employees.
 
-保留员工长期档案，项目事实与决定分开；新员工只接收当前职责、必要证据、批准基准和工作单元。核心文件单写入者，计算或运行实例等独占资源登记范围、占用者与容量后排队。审核不取消占用。
+Keep persistent employee profiles, separating project facts from decisions. New employees receive only their current responsibility, necessary evidence, approved baseline and work unit. Core files have one writer. Register scope, owner and capacity for exclusive resources such as compute or running instances, then queue users. A review does not release a resource reservation.
 
-实例记录保存task_id/范围、employee_id/职责/thread_id/必要host_id及核实状态、各消息方向与创建/增员/唤醒授权、工具能力、参数总上限/部门对轮次及作用域。未知不能当已部署、零成本或无限额度。
+Instance records include task ID/scope, employee ID/role/chat ID/required host ID and verification status, authorization for each message direction, creation/staffing/wakeups, tool capabilities, overall parameter limits, department-pair round limits and their scopes. Unknown does not mean deployed, free or unlimited.
 
-主对话是总账和任务总状态唯一写入者；员工只写自己的成果、报告与回执。动作前持久保存，使用一致快照及追加事件，至少包括：
-- 工作单元合同、状态、输入/产物版本与内容身份、检查点和下一步。
-- 已处理及待发送消息、在途动作、授权、额度占用和工具回执。
-- 全部待决门槛、原始审核与用户裁决。
-- limit/spent/reserved、分配所有者/方向/状态，重大问题与完成预留。
-- 员工/设备绑定、资源占用、读取游标、最近有效进展和外部作业身份。
+The main chat is the sole writer of the total ledger and overall task state. Employees write only their own artifacts, reports and receipts. Persist before acting, using consistent snapshots and append-only events. At minimum retain:
 
-恢复先核对停止指令与全部待决门槛，再核实版本、成果、在途动作、预算、占用和运行状态。仅继续仍获准且不冻结的阶段；已完成阶段不重复执行。发送未知先查回执，旧执行者是否停止未知时不派另一个人同时写同一成果。交接记录所有权版本，旧结果待核对后才发布。
+- Work-unit contracts, status, input/artifact revisions and content identities, checkpoints and next actions.
+- Processed and pending messages, in-flight actions, authorization, reservations and tool receipts.
+- All pending gates, original reviews and user decisions.
+- `limit/spent/reserved`, allocation owner/direction/status, and major-issue and completion reserves.
+- Employee/device bindings, resource reservations, read cursors, latest valid progress and external-job identities.
 
-默认单设备运行，由主对话读取回收报告；主动推送须另行验证授权与能力。主对话活动期间用官方等待/读取回收；结束后续检需另有已授权、已验证的宿主唤醒配置。收到通知不等于已经处理。唤醒沿用原任务与预算，等待用户决定的范围保持冻结。检查次数、时段、token和费用同样计入运行预算；无待办停止检查，员工聊天保留。
+On recovery, first check stop instructions and every pending gate, then verify revisions, artifacts, in-flight actions, budgets, reservations and runtime status. Continue only authorized, unfrozen stages; do not repeat completed stages. Check receipts for unknown sends. Do not assign another writer to the same artifact while the previous executor's termination is unknown. Record ownership revision during handoff; verify old results before publishing them.
 
-固定检查优先由普通程序承担，判断任务才唤醒主对话。本地调度依赖执行设备可用；应用崩溃需宿主恢复机制，不能靠skill自唤醒。能力未接入时只保存待处理状态。
+Default to one device and main-chat report collection; separately verify authorization and capabilities for active push. Use official wait/read tools while the main chat is active. Checks after its turn ends require an authorized, verified host wakeup configuration. Receiving a notification is not processing it. Wakeups retain the original task and budget; scope awaiting a user decision remains frozen. Check counts, time windows, tokens and costs also count toward runtime budgets. Stop checks when nothing is pending; retain employee chats.
 
-跨设备、运行中模型任务及整个应用崩溃恢复属于宿主扩展能力。项目需要这些能力时单独验证，不作为普通单设备使用的前提。实际故障发生时保存现场、核实所有者与进程，并按已验证的机制恢复。
+Prefer ordinary programs for fixed checks and wake the main chat only for judgment. Local scheduling depends on the execution device being available. Application crashes require host recovery; the skill cannot wake itself. If a capability is not connected, save pending state only.
 
-待回答提醒优先使用客户端原生问题通知。正文选项与问题卡片仍必须可见；焦点检测、通知权限和系统弹窗由宿主处理。记录未配置、用户确认开启与实际送达三种证据层级；设置开启不能记为送达通过。同一问题不反复提醒，不建立额外轮询自动化；等待裁决的范围保持冻结。官方通知说明：https://learn.chatgpt.com/docs/notifications 。
+Cross-device operation, recovery of running model tasks and whole-application crash recovery are host extensions. Verify them separately when required by the project; ordinary one-device operation does not depend on them. For an actual failure, preserve state, verify owners and processes, and recover through mechanisms already validated.
+
+Prefer native client question notifications for pending answers. Body options and available question cards must remain visible; the host handles focus detection, notification permissions and system alerts. Distinguish unconfigured, user-confirmed enabled and actual delivery evidence; enabled settings do not prove delivery. Do not repeatedly remind for the same question or create extra polling automation. Scope awaiting adjudication remains frozen. [Official notification guide](https://learn.chatgpt.com/docs/notifications).

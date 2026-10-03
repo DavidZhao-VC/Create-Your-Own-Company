@@ -15,10 +15,10 @@ class RuntimeTests(unittest.TestCase):
     def test_unknown_model_capability_is_not_assumed(self):
         with self.assertRaisesRegex(ValueError,'MODEL_UNAVAILABLE'): resolve_model(self.profile(),'create_thread',{})
     def fixture(self,root):
-        employee=root/'employee';employee.mkdir(); artifact=employee/'result.md';artifact.write_text('成果完整\n',encoding='utf-8')
+        employee=root/'employee';employee.mkdir(); artifact=employee/'result.md';artifact.write_text('Complete deliverable: \u2713\n',encoding='utf-8')
         h=hashlib.sha256(artifact.read_bytes()).hexdigest()
         report=employee/'report.json'
-        payload={'task_id':'task-1','message_id':'report-1','status':'complete','summary':'完成','artifacts':[{'path':str(artifact),'sha256':h}],'delivery':{'state':'rejected_by_auto_review_not_sent'}}
+        payload={'task_id':'task-1','message_id':'report-1','status':'complete','summary':'Completed \u2713','artifacts':[{'path':str(artifact),'sha256':h}],'delivery':{'state':'rejected_by_auto_review_not_sent'}}
         report.write_text(json.dumps(payload,ensure_ascii=False),encoding='utf-8')
         binding={'task_id':'task-1','report_id':'report-1','thread_id':'employee-1','host_id':'local','owner_directory':str(employee),'report_path':str(report),'artifacts':{str(artifact):h}}
         return binding,report,payload
@@ -44,7 +44,7 @@ class RuntimeTests(unittest.TestCase):
     def test_same_report_id_changed_content_is_frozen_and_preserved(self):
         with tempfile.TemporaryDirectory() as t:
             r=Path(t);b,p,data=self.fixture(r);state=r/'inbox.json';first=collect_report(b,state)
-            data['summary']='另一结论';p.write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
+            data['summary']='A different conclusion \u2192';p.write_text(json.dumps(data,ensure_ascii=False),encoding='utf-8')
             conflict=collect_report(b,state);saved=json.loads(state.read_text(encoding='utf-8'))
             self.assertEqual(conflict['outcome'],'content_conflict')
             self.assertTrue(conflict['affected_scope_frozen'])

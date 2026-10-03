@@ -1,32 +1,32 @@
 # operating-model
 
-面向长期聊天协作的技能：用户只与主对话交流，主对话负责分工、汇总和调整，员工聊天持续保留身份与上下文。适合有多个实质要求、需要独立交付与审核的任务。
+A skill for persistent chat coordination. The user communicates only with the main chat, which assigns, collects and adjusts work. Employee chats retain their identities and context. Use it for tasks with multiple substantive requirements, independent deliverables and review needs.
 
-## 核心规则
+## Core rules
 
-- 至少三个实质要求且分工收益成立，才启动调度；普通小任务由主对话完成。
-- 按需启用研究、设计、工程、视觉媒体和审核职责；优先复用最少人数。
-- 重大决策、正式设计审核和任何正式FAIL交用户裁决，只冻结受影响范围。
-- 重大问题及完成成果立即形成报告；同任务的小问题累积三项，真实阻塞可提前协调。
-- 默认员工保存成果，主对话读取回收；通信、预算、模型、期限和恢复由实例配置约束。
-- 用户选项写在主对话正文中；可用的问题卡片与客户端通知作为辅助。
+- Dispatch only when a task has at least three substantive requirements and a worthwhile division of work. Handle ordinary small tasks in the main chat.
+- Activate research, design, engineering, visual/media and review responsibilities as needed. Reuse the minimum staff.
+- Escalate major decisions, formal design reviews and any formal FAIL to the user. Freeze only affected scope.
+- Form reports immediately for major issues and completed work. Batch three small issues within the same task; coordinate real blockers earlier.
+- Employees save artifacts and the main chat collects them. Instance settings govern communication, budgets, models, deadlines and recovery.
+- Present user choices in the main chat's message body. Available question cards and native notifications support that exchange.
 
-## 使用
+## Usage
 
-将完整的`operating-model`目录放入宿主的Skills目录，保持内部相对路径。在主对话调用`$operating-model`并描述任务。
+Place the complete `operating-model` directory in your host's Skills directory, preserving its internal paths. Invoke `$operating-model` in the main chat and describe the task.
 
-将[实例模板](operating-model/assets/instance.template.json)复制到项目工作区，按需要配置模型选择、聊天绑定、预算与运行参数。空值表示未配置；技能文件和模板不授予创建聊天、发送消息或追加预算的权限。
+Copy the [instance template](operating-model/assets/instance.template.json) into the project workspace. Configure model choices, chat bindings, budgets and runtime parameters as needed. Null values mean unconfigured. Skill files and templates do not authorize chat creation, message sending or budget increases.
 
-宿主需提供长期聊天、官方读取/等待工具及项目状态存储。主动回传、后台唤醒和通知取决于宿主能力与有效授权。默认单设备运行；跨设备与应用恢复按项目需要另行验证。
+The host must supply persistent chats, official read/wait tools and project state storage. Active return messages, background wakeups and notifications depend on host capabilities and valid authorization. Default operation uses one device; verify cross-device operation and application recovery separately when the project requires them.
 
-入口见[SKILL.md](operating-model/SKILL.md)，详细制度按动作读取`references/`。辅助脚本使用Python 3.9及以上版本的标准库，提供模型选择解析和报告校验、去重；不包含聊天调度器。
+Start with [SKILL.md](operating-model/SKILL.md); read files under `references/` only for the relevant action. The helpers use the Python 3.9+ standard library for model-choice resolution, report verification and deduplication. They do not include a chat scheduler.
 
-## 验证
+## Validation
 
-组件测试：
+Run component tests:
 
 ```sh
 python -B -m unittest discover -s operating-model/scripts -p test_runtime_support.py -v
 ```
 
-本包的结构与组件检查见[VALIDATION.md](VALIDATION.md)，逐文件校验值见`manifest.json`。
+See [VALIDATION.md](VALIDATION.md) for package and component checks. Per-file checksums are in `manifest.json`.

@@ -1,21 +1,22 @@
-# 通用职责与工作单元
+# Responsibilities and work units
 
-按当前交付物选择必要职责，不按行业、软件名称或固定场景启动全员。少量明确要求、局部修改与定向核查由主对话直接处理。
+Choose responsibilities from the current deliverable, not an industry, software name or fixed scenario that activates everyone. The main chat handles a few clear requirements, local edits and focused checks directly.
 
-| 职责 | 选择条件与交付 |
-|---|---|
-| research / 资料与研究 | 需要外部来源、证据或方法核实；交来源、事实、适用条件与不确定性。 |
-| design / 内容与方案 | 需要确定结构、路径或取舍；交目标、方案、依赖及批准版本。 |
-| engineering / 工程与验证 | 需要构建、运行或复现；交可用成果及实际验证。 |
-| visual_media / 视觉与媒体 | 需要表达、呈现或媒体生产；交要求的源文件、成品与呈现检查。 |
-| review / 独立审核 | 需要独立验收；交明确类型、版本、范围、证据与结论。 |
+| Responsibility | When needed and what to deliver |
+| --- | --- |
+| `research` | External sources, evidence or method verification: sources, facts, applicability and uncertainty. |
+| `design` | Structure, solution paths or tradeoffs: goals, options, dependencies and approved revision. |
+| `engineering` | Building, running or reproducing: usable artifacts and actual verification. |
+| `visual_media` | Expression, presentation or media production: requested source files, finished output and presentation checks. |
+| `review` | Independent acceptance review: explicit type, revision, scope, evidence and verdict. |
 
-一个工作单元对应一份可独立验收的交付物及必要验证。体量过大先在原员工聊天内分阶段；并行性和单元数量不证明需要增员。长耗时外部作业单独登记，不让聊天持续空等。
+A work unit corresponds to one independently verifiable deliverable and its necessary checks. If too large, stage it within the same employee chat first. Parallelism or the number of units does not itself justify more employees. Register long external jobs separately rather than keeping a chat waiting idly.
 
-派发合同使用实例参数，包含：
-- 稳定task_id、unit_id、版本，目标、必要输入与权威成果位置。
-- 负责人、可写范围、依赖、资源，以及适用的授权和设计批准。
-- 交付物与验收标准；报告篇幅和详细产物范围分别约定。
-- 模型、推理设置、消息/token/API等价费用上限、首次进展检查、单元截止时间、外部作业期限和允许恢复次数。
+Dispatch contracts use instance parameters and include:
 
-沿用已核实参数；未知标“未配置”，只补影响下一动作的必要项。普通回报使用短摘要与证据引用，详细成果完整保存。验收依据包括实际内容、行为或呈现，不用源文件存在代替效果验证。盘点已有产物后才启动新的重型作业。
+- Stable `task_id`, `unit_id` and revision, goal, necessary inputs and authoritative artifact location.
+- Owner, writable scope, dependencies, resources, applicable authorization and design approval.
+- Deliverables and acceptance criteria; separate the report-summary limit from detailed artifact scope.
+- Model and reasoning settings, message/token/API-equivalent cost limits, first progress check, work-unit deadline, external-job deadline and permitted recovery attempts.
+
+Reuse verified parameters. Mark unknown values unconfigured and fill only what affects the next action. Use short summaries and evidence references for routine reports; preserve complete detailed artifacts. Acceptance depends on actual content, behavior or presentation, not just source-file existence. Inventory existing artifacts before starting new heavy jobs.

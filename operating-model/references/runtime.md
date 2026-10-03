@@ -1,18 +1,18 @@
-# 模型偏好与读取回收
+# Model preferences and report collection
 
-首次使用先查项目实例配置；已有真人选择直接沿用，没有选择才在主对话列出当前宿主支持的模型与推理档位。保存用户选择的模型与推理档位，后续沿用；用户批准的任务例外单独登记，不静默降级，不改历史记录。偏好不授予增员、发消息或费用追加权限。
+First check the project instance. Reuse an existing human model choice; only if none exists should the main chat offer models and reasoning levels currently supported by the host. Save the user's selection and reuse it. Record user-approved task exceptions separately; do not silently downgrade or rewrite history. A preference does not authorize staffing, messaging or budget increases.
 
-派发前核实当次工具声明和目标宿主支持的组合；官方创建或发送工具有模型字段时显式传入。读取和等待工具没有这些字段时不添加。工具参数不能改变正在运行的主对话模型。没有相关工具时保存方案并如实说明能力缺项。
+Before dispatch, verify the current tool declaration and combinations supported by the target host. Explicitly pass model fields when official create/send tools support them. Do not add these fields to read/wait tools that lack them. Tool parameters cannot change the model of the already running main chat. Without the relevant tools, save the plan and report missing capabilities accurately.
 
-默认回收顺序：员工完整保存成果与报告；主对话用官方等待工具及游标观察完成，再读取报告，核对主管建立的任务/聊天/目录/内容绑定；必要时执行本地回收辅助组件，最后汇总给用户。主对话结束后只有已配置、已授权的宿主调度才可能续检，技能不能自行启动。
+Default collection: employees fully save artifacts and reports; the main chat uses official wait tools and cursors to observe completion, reads the report and checks coordinator-established task/chat/directory/content bindings. Run the local collection helper if needed, then summarize for the user. Continued checks after the main turn ends require configured, authorized host scheduling; the skill cannot start itself.
 
-可用组件为[scripts/runtime_support.py](../scripts/runtime_support.py)，Python标准库、无网络或聊天调用：
+The [runtime_support.py](../scripts/runtime_support.py) helper uses the Python standard library and makes no network or chat calls:
 
-- `resolve_model(profile, operation, capabilities, host)`返回已核实模型组合；能力或真人偏好来源缺失时拒绝受影响派发。来源字段是记录，调用者仍须核实真实授权，不能因字段非空就认为取得平台权限。
-- `collect_report(binding, state_path)`按主管绑定校验身份、可读路径和预期产物SHA-256，保留报告；同号同内容去重，同号不同内容保留冲突；正式FAIL保持原结论。回执方法为`main_read`，`push_delivery_confirmed=false`。
+- `resolve_model(profile, operation, capabilities, host)` returns a verified model combination. Missing capabilities or human-choice provenance blocks affected dispatch. A provenance field is a record: callers must verify real authorization, not treat a nonempty field as platform permission.
+- `collect_report(binding, state_path)` verifies identity, permitted paths and expected artifact SHA-256 against coordinator bindings, then preserves the report. It deduplicates the same ID/content and preserves different-content conflicts. Original formal FAIL verdicts remain intact. Receipts use `main_read` and `push_delivery_confirmed=false`.
 
-组件的`affected_scope_frozen`反映接收时判断。后来已有真人裁决时，协调者须合并最新裁决与门槛历史，不能仅凭旧报告重开已关闭的等待，也不能把归档解释为允许采用。组件不负责完整裁决、预算或任务调度。
+The helper's `affected_scope_frozen` reflects the receipt-time judgment. When a later human decision exists, merge it with gate history. An old report must not reopen a closed wait; archive does not imply adoption permission. The helper does not implement full adjudication, budgets or task scheduling.
 
-主对话是收件箱和总账唯一写入者；组件采用同目录临时文件替换，未提供多进程锁。其他进程不可并行写同一状态文件。实际实例从[配置模板](../assets/instance.template.json)复制到项目工作区，补真实绑定、来源和即将动作必要的额度；空字段不代表已部署或无限授权。
+The main chat is the sole writer of the inbox and total ledger. The helper uses a temporary file in the same directory followed by replacement; it has no multiprocess lock. Do not let other processes write the same state file concurrently. Copy the [instance template](../assets/instance.template.json) into the project workspace and fill actual bindings, provenance and limits required for the next action. Empty fields do not mean deployed or unlimited authorization.
 
-配置模板不预设真实员工、运行预算或调度任务。测试脚本见[scripts/test_runtime_support.py](../scripts/test_runtime_support.py)，可在隔离临时目录验证组件。主动发送缺授权与自动审批拒绝是两种状态；不得伪造真人来源、改角色标记或换旁路来绕过它们。
+The template does not preconfigure real employees, runtime budgets or scheduled jobs. The [component tests](../scripts/test_runtime_support.py) can verify the helper in isolated temporary directories. Missing authorization before a send and an automatic-review rejection are different states. Do not fabricate human provenance, change role markers or use alternate routes to bypass approval.

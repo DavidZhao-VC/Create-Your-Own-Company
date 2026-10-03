@@ -1,8 +1,8 @@
-# 验证
+# Validation
 
-- 官方技能结构校验通过。
-- 本地组件14项测试通过，覆盖模型选择、报告校验、去重、冲突和审核状态保留。
-- UTF-8、JSON、Python语法及内部文件引用检查通过。
-- 发布包附逐文件SHA-256清单；ZIP重新读取、解压并按字节核对。
+- Official skill structure validation passed.
+- All 14 local component tests passed, covering model choices, report verification, deduplication, conflicts and preservation of review status.
+- UTF-8, JSON, Python syntax and internal file references were checked.
+- The release package includes a per-file SHA-256 manifest. The ZIP was reopened, extracted and compared byte for byte.
 
-组件与包结构检查不替代目标宿主的长期聊天、主动发送、唤醒和通知验收。
+Component and package checks do not replace acceptance testing of persistent chats, active sends, wakeups or notifications in the target host.
