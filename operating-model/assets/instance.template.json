@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0",
+  "template_only": true,
+  "scope": "single_device_project_instance",
+  "model_choice": {
+    "state": "unconfigured",
+    "model": null,
+    "thinking": null,
+    "label": null,
+    "source_user_message_id": null,
+    "source_note": "由主对话记录并核实用户选择；此字段不提供平台授权。"
+  },
+  "host_id": null,
+  "coordinator_thread_id": null,
+  "employees": [],
+  "department_categories": [
+    "research",
+    "design",
+    "engineering",
+    "visual_media",
+    "review"
+  ],
+  "collection_mode": "main_read",
+  "tool_capabilities_verified": false,
+  "budgets": {
+    "active_messages": {
+      "limit": null,
+      "spent": 0,
+      "reserved": 0
+    },
+    "token_limit": null,
+    "api_equivalent_usd_limit": null,
+    "new_employee_limit": null,
+    "maximum_concurrency": null,
+    "first_progress_check_minutes": null,
+    "unit_soft_deadline_minutes": null,
+    "summary_character_limit": null,
+    "recovery_attempt_limit": null
+  },
+  "authorization_by_direction": {},
+  "gates": [],
+  "decisions": [],
+  "notification": {
+    "questions_visible_in_chat_body": true,
+    "question_card_when_available": true,
+    "background_question_alert_preferred": null,
+    "settings_status": "unconfigured",
+    "delivery_verified": false
+  },
+  "wake_configuration": null,
+  "stop_requested": false
+}
