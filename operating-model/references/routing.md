@@ -2,6 +2,24 @@
 
 Choose responsibilities from the current deliverable, not an industry, software name or fixed scenario that activates everyone. The main chat handles a few clear requirements, local edits and focused checks directly.
 
+The main chat owns decomposition and assignment. Derive substantive requirements from the user's requested outcome even when the request is unnumbered. Include the checks needed to accept each deliverable, without inventing new objectives or counting formatting constraints as separate requirements. Record a lightweight work table in project state:
+
+| Unit and covered requirements | Single accountable owner | Deliverable and acceptance | Inputs and dependencies | Writable scope | Status and next action |
+| --- | --- | --- | --- | --- | --- |
+| Stable unit ID and substantive requirement IDs | Main chat or a verified employee identity | Concrete output and observable checks | Required artifacts, revisions and predecessor units | Exact files or resource boundary | Current state, blocker if any, and next executable step |
+
+Cover every substantive requirement and assign one accountable owner per unit. An employee may own several units; an independent review has a different author. Use the fewest suitable employees within existing authorization. For work below the dispatch threshold, the main chat owns and completes the units. A table is a working record: do not require the user to approve ordinary task organization or supply department names. When dispatch is justified and authorized, issue concrete contracts and start ready work rather than stopping after a proposed staffing plan. Missing authority blocks the affected dispatch, while independent authorized work continues.
+
+## Main-chat execution loop
+
+1. Inventory existing outputs and check current authorization, gates, resource owners and remaining allocations.
+2. Derive or update the work table, then execute or dispatch ready authorized units with concrete acceptance criteria.
+3. Use bounded official waits and read cursors for active units. A wait timeout with valid progress within the deadline and budget keeps the task active; continue checks while the host permits them. Check on a useful cadence rather than repeatedly polling unchanged state.
+4. Collect and verify returned reports and artifacts against the unit contract. Record the accepted revision, resolve ordinary technical issues within authority, satisfy dependencies and start the next ready unit. Formal verdicts and human-only blockers follow the existing decision gates.
+5. Before final delivery, verify coverage of every original requirement, intended revisions, necessary integrated checks and all applicable gate decisions. Mark overall completion only when required work and jobs are finished or explicitly disposed of by a covering user decision. Saved unit reports alone do not establish overall acceptance.
+
+After a progress update, a technical coordination action or a unit report, continue from the next applicable step. Do not ask the user whether to continue a next step already covered by authority. If a genuine human decision is needed, present it promptly and freeze only dependent work. For an unavoidable host limit, save the incomplete state, current owners and next action; record a verified authorized handoff when one exists, otherwise state the actual continuation blocker. Do not promise background checks without a working authorized host mechanism.
+
 | Responsibility | When needed and what to deliver |
 | --- | --- |
 | `research` | External sources, evidence or method verification: sources, facts, applicability and uncertainty. |

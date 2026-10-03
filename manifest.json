@@ -1,5 +1,5 @@
 {
-  "edition": "public-en-1.0",
+  "edition": "public-en-1.1-candidate",
   "hash_algorithm": "SHA-256",
   "manifest_excludes_itself": true,
   "entries": [
@@ -20,8 +20,8 @@
     },
     {
       "path": "operating-model/references/communications.md",
-      "bytes": 5151,
-      "sha256": "059be55755b0264c390a1ed3a45b038a7cf60afcba72d451aa7e2dd94558ecfd"
+      "bytes": 6121,
+      "sha256": "b5e125557b596a53ce963bc3433236ef6e45fe011cb1d061f35f483192e41f1e"
     },
     {
       "path": "operating-model/references/decisions.md",
@@ -30,18 +30,18 @@
     },
     {
       "path": "operating-model/references/organization.md",
-      "bytes": 4498,
-      "sha256": "14e72fc8a9a736f3098ddf5235cbefce97c95a6dacc49e705a0b50e40759a947"
+      "bytes": 4743,
+      "sha256": "37aa7c81ad6fba2a0a95caf4aeda0fb145ae0822c6cbb120f079d70c829ae6b1"
     },
     {
       "path": "operating-model/references/routing.md",
-      "bytes": 2100,
-      "sha256": "e8278a83cd2aab2abec350f4e36e94a833ab6030e992f78bc0c4583a1acf7ce4"
+      "bytes": 5299,
+      "sha256": "d1cceeeb99ee54b58bb7761fe90a1dae8194893e03197a1828a2b4d27bfca484"
     },
     {
       "path": "operating-model/references/runtime.md",
-      "bytes": 3209,
-      "sha256": "9f999611d495e1943bdf198685c843d8fcba9cc97385dfa03789395b3e6753ae"
+      "bytes": 3628,
+      "sha256": "32cbf8b02cea7d3155f3924f5d2534977b6cab3e11a558d04d22cad9176d179b"
     },
     {
       "path": "operating-model/scripts/runtime_support.py",
@@ -55,18 +55,18 @@
     },
     {
       "path": "operating-model/SKILL.md",
-      "bytes": 3195,
-      "sha256": "227a85f2f00b2be455bc464cd680e901e677426d0943be9aceb98da07640521a"
+      "bytes": 4502,
+      "sha256": "38d7c0262f34536b4e3db4ff59739ce9a8c9dccd5fe0659185ff255b55bffdb8"
     },
     {
       "path": "README.md",
-      "bytes": 2503,
-      "sha256": "3ca2323ea95ec385272d85a181454672b4da0dff6d9fcb3011dd6d1c51405917"
+      "bytes": 3075,
+      "sha256": "12665c904774a3995fccb4e2a37c017b27c912724c5dd11f45b8d9979491a27e"
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 548,
-      "sha256": "113280ab98e878fad3b66ce4e5d138e16946e775cd1087af6fc01ef41f2b88a5"
+      "bytes": 2394,
+      "sha256": "8eee04de6928907edea3f007260efcb6f9580d21c87aa9c8200e8998f7ff8f7f"
     }
   ]
 }
