@@ -1,5 +1,5 @@
 {
-  "edition": "public-en-1.1-candidate",
+  "edition": "public-en-1.2-candidate",
   "hash_algorithm": "SHA-256",
   "manifest_excludes_itself": true,
   "entries": [
@@ -15,13 +15,13 @@
     },
     {
       "path": "operating-model/assets/instance.template.json",
-      "bytes": 1433,
-      "sha256": "2a83e6b38ec9494523c33c797c1fd32e9dc426179306c5ea0ee4ca1b8c77f06b"
+      "bytes": 2415,
+      "sha256": "c0020189282205129d2a2a7a7c8038c40d81b40915e20b6c7fc62b2898cb4a2a"
     },
     {
       "path": "operating-model/references/communications.md",
-      "bytes": 6121,
-      "sha256": "b5e125557b596a53ce963bc3433236ef6e45fe011cb1d061f35f483192e41f1e"
+      "bytes": 6675,
+      "sha256": "91ce21011c0ed373286241e4bfd70f1e4ea12d50427f6e66f454d12a3762c4fd"
     },
     {
       "path": "operating-model/references/decisions.md",
@@ -29,19 +29,29 @@
       "sha256": "617d63a067ffcdfadf2b9de9cfc58f353ddf56db9ccf86bb1f133ee372e6da7b"
     },
     {
+      "path": "operating-model/references/execution.md",
+      "bytes": 6187,
+      "sha256": "5414b651a8e8d8494c0a0a3ea7c5a1279ce534de179bc133547a9e244588b122"
+    },
+    {
       "path": "operating-model/references/organization.md",
-      "bytes": 4743,
-      "sha256": "37aa7c81ad6fba2a0a95caf4aeda0fb145ae0822c6cbb120f079d70c829ae6b1"
+      "bytes": 5917,
+      "sha256": "7401a18878c365bdf9eb3e15c4436271f71da4677e8033c2ddbcddc69baa8bac"
+    },
+    {
+      "path": "operating-model/references/planning.md",
+      "bytes": 6471,
+      "sha256": "a926fdb609c54215f37185eef598872ddace07004a4492b1aec6c23465e61e5a"
     },
     {
       "path": "operating-model/references/routing.md",
-      "bytes": 5299,
-      "sha256": "d1cceeeb99ee54b58bb7761fe90a1dae8194893e03197a1828a2b4d27bfca484"
+      "bytes": 6202,
+      "sha256": "a05913cc8f5d742a1b553b67a173064c7d84321ee6639630aec1a49722294b7a"
     },
     {
       "path": "operating-model/references/runtime.md",
-      "bytes": 3628,
-      "sha256": "32cbf8b02cea7d3155f3924f5d2534977b6cab3e11a558d04d22cad9176d179b"
+      "bytes": 4230,
+      "sha256": "1f4663c4a385e6ea1b210f110241cae5ec1d537cb2518a2d68064c13ec5ab5ef"
     },
     {
       "path": "operating-model/scripts/runtime_support.py",
@@ -55,18 +65,18 @@
     },
     {
       "path": "operating-model/SKILL.md",
-      "bytes": 4502,
-      "sha256": "38d7c0262f34536b4e3db4ff59739ce9a8c9dccd5fe0659185ff255b55bffdb8"
+      "bytes": 6444,
+      "sha256": "119b649ec8811a3e8319d3cb26fd1362858e75231a9a0b29bdef1ba27f1b70ef"
     },
     {
       "path": "README.md",
-      "bytes": 3075,
-      "sha256": "12665c904774a3995fccb4e2a37c017b27c912724c5dd11f45b8d9979491a27e"
+      "bytes": 4434,
+      "sha256": "1310a43bb92f0eb5e5fe614b0d22bd0af6cd5dfed58bb12a0d7510b9e4ab884c"
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 2394,
-      "sha256": "8eee04de6928907edea3f007260efcb6f9580d21c87aa9c8200e8998f7ff8f7f"
+      "bytes": 3405,
+      "sha256": "d020bff78df3fefdceb26fa84c1535d7e55a210c778a9ea1ca9fca449912fac2"
     }
   ]
 }

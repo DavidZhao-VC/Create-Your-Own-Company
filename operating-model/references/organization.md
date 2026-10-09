@@ -1,6 +1,6 @@
 # Staffing, state and runtime capabilities
 
-Activate only necessary responsibilities. A lead may also execute; the main chat coordinates everyone. Ordinary reading and similar execution default to one employee. Independent review uses a different author with relevant expertise.
+Activate only necessary responsibilities. A lead may also execute; the main chat coordinates everyone. Ordinary reading and similar execution default to one employee. Independent review uses a different author with relevant expertise. First invocation requires actual authorized dispatch as described in [execution.md](execution.md). Being the sole human interface does not require the main chat to write every implementation, transfer every file or personally rerun every detailed check.
 
 Assess staffing immediately when substantial similar work appears. Compare one employee with multiple employees for scale, differences, duration, shared bottlenecks, and handoff, duplicate work, communication, merging and verification costs. Make a grounded estimate from available information and record benefits, limits and staffing decisions. Without evidence, retain one employee; do not create an employee merely to estimate staffing costs. Reuse first; create the minimum additional staff only within human-authorized headcount, concurrency and budgets. Employees cannot recursively create employees.
 
@@ -8,19 +8,21 @@ Keep persistent employee profiles, separating project facts from decisions. New 
 
 Instance records include task ID/scope, employee ID/role/chat ID/required host ID and verification status, authorization for each message direction, creation/staffing/wakeups, tool capabilities, overall parameter limits, department-pair round limits and their scopes. Unknown does not mean deployed, free or unlimited.
 
-The main chat is the sole writer of the total ledger and overall task state. Employees write only their own artifacts, reports and receipts. Persist before acting, using consistent snapshots and append-only events. At minimum retain:
+The main chat is the sole writer of the total ledger and overall task state. Employees write only assigned artifacts, service state, reports and receipts within their explicit permissions. Bulk verification programs may produce separate receipt files for coordinator adoption; they do not concurrently write the coordinator inbox or ledger. Persist before acting, using consistent snapshots and append-only events. At minimum retain:
 
 - Work-unit contracts, status, input/artifact revisions and content identities, checkpoints and next actions.
 - Processed and pending messages, in-flight actions, authorization, reservations and tool receipts.
 - All pending gates, original reviews and user decisions.
 - `limit/spent/reserved`, allocation owner/direction/status, and major-issue and completion reserves.
 - Employee/device bindings, resource reservations, read cursors, latest valid progress and external-job identities.
+- First-dispatch receipts, ongoing service owners, actual runtime qualification and process supervision, acknowledgement deadlines, backlog/latency alerts and usable recovery checkpoints.
+- Lifecycle estimates, soft checkpoints, sourced hard stops, closure reserves and forecast extension triggers from [planning.md](planning.md).
 
 On recovery, first check stop instructions and every pending gate, then verify revisions, artifacts, in-flight actions, budgets, reservations and runtime status. Continue only authorized, unfrozen stages; do not repeat completed stages. Check receipts for unknown sends. Do not assign another writer to the same artifact while the previous executor's termination is unknown. Record ownership revision during handoff; verify old results before publishing them.
 
 Default to one device and main-chat report collection; separately verify authorization and capabilities for active push. Keep the main chat active through authorized execution, official wait/read collection and acceptance while the host permits continuation. A routine progress message or work-unit completion is not a reason to end the turn. Checks after its turn ends require an authorized, verified host wakeup configuration. An unavoidable host handoff preserves pending work and its next action rather than marking the task complete. Receiving a notification is not processing it. Wakeups retain the original task and budget; scope awaiting a user decision remains frozen. Check counts, time windows, tokens and costs also count toward runtime budgets. Stop checks when nothing is pending; retain employee chats.
 
-Prefer ordinary programs for fixed checks and wake the main chat only for judgment. Local scheduling depends on the execution device being available. Application crashes require host recovery; the skill cannot wake itself. If a capability is not connected, save pending state only.
+Prefer ordinary programs for fixed checks and wake the main chat only for judgment. Qualify their actual launch, lifetime, monitoring, resource use and end-to-end service before starting dependent expensive work. A detached-looking process or successful source review does not prove independence from the tool/application lifecycle. Local scheduling depends on the execution device being available. Application crashes require host recovery; the skill cannot wake itself. If a capability is not connected, save pending state and block only its dependent launch. Do not replace missing continuous service with an assumption that the main chat will remember it while busy.
 
 Cross-device operation, recovery of running model tasks and whole-application crash recovery are host extensions. Verify them separately when required by the project; ordinary one-device operation does not depend on them. For an actual failure, preserve state, verify owners and processes, and recover through mechanisms already validated.
 

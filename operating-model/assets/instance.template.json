@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "template_only": true,
   "scope": "single_device_project_instance",
   "model_choice": {
@@ -13,6 +13,15 @@
   "host_id": null,
   "coordinator_thread_id": null,
   "employees": [],
+  "startup": {
+    "state": "not_started",
+    "existing_employees_verified": false,
+    "work_units_registered": false,
+    "dispatch_receipts": [],
+    "blocked_operations": []
+  },
+  "work_units": [],
+  "operational_services": [],
   "department_categories": [
     "research",
     "design",
@@ -34,8 +43,28 @@
     "maximum_concurrency": null,
     "first_progress_check_minutes": null,
     "unit_soft_deadline_minutes": null,
+    "unit_soft_deadline_semantics": "checkpoint_only_not_stop_authority",
+    "hard_stop_at": null,
+    "hard_stop_source": null,
+    "closure_reserve_minutes": null,
     "summary_character_limit": null,
     "recovery_attempt_limit": null
+  },
+  "lifecycle_plan": {
+    "state": "unconfigured",
+    "estimate_source": null,
+    "estimate_and_uncertainty": null,
+    "host_quota_observation": null,
+    "checkpoint_policy": null,
+    "execution_transport_review_repair_closure": [],
+    "observation_horizon_and_cadence": null,
+    "required_checks_including_closure": null,
+    "reserved_failure_and_completion_capacity": null,
+    "next_progress_check_at": null,
+    "soft_checkpoint_at": null,
+    "stop_new_work_at": null,
+    "extension_trigger": null,
+    "feasibility_verified": false
   },
   "authorization_by_direction": {},
   "gates": [],
